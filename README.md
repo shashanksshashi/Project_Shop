@@ -3,9 +3,6 @@
 
 <!-- Application Name: Digital-Shop -->
 
-# Description:
-Digital-Shop is a web application developed using AngularJS that allows users to manage products, add new products, and maintain a shopping cart. Users can add products with their names and unit costs, view available products, add them to the shopping cart, and manage the shopping cart by updating quantities or removing items.
-
 # Features:
 
 --> Add new products: Users can add new products by entering the product name and unit cost.
