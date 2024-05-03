@@ -1,0 +1,24 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name": "Laptop",
+      "unitCost": 40000
+    },
+    {
+      "id": 2,
+      "name": "Smartphone",
+      "unitCost": 20000
+    },
+    {
+      "id": 3,
+      "name": "Headphones",
+      "unitCost": 5000
+    },
+    {
+      "id": 4,
+      "name": "Smartwatch",
+      "unitCost": 10000
+    }
+  ]
+}

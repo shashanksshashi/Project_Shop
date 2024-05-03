@@ -1,0 +1,98 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital-Shop</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<body ng-app="projectShop" ng-controller="shopController">
+    <div class="container">
+        <div class="AddProducts">
+            <div class="welcome">
+                <h1>
+                    Digi Shop
+                </h1>
+                <h4> Enjoy your shopping !!!!!</h4>
+            </div>
+            <h1 style="margin-top: 0;">Add a New Product</h1>
+            <section class="AddProduct">
+                <form name="productForm" ng-submit="onAddNew(newProductName, newUnitCost)" novalidate>
+                    <label for="">Product Name :</label>
+                    <input type="text" ng-model="newProductName" placeholder="Enter a Product Name " required />
+                    <label for="">Unit Cost :</label>
+                    <input type="number" ng-model="newUnitCost" min="1"  placeholder="Enter the cost" required />
+                    <button ng-disabled="productForm.$invalid">Add New</button>
+                    <section class="searchBar">
+                        <label for="">Search Product:</label>
+                        <input type="text" ng-model="searchProduct.name" placeholder="Search"/>
+                    </section>
+                </form>
+            </section>
+
+        </div>
+        <!-- Displays the product list -->
+        <h1> Available Products </h1>
+        <!-- Heading for the product list -->
+        <div>
+            <table class="productTable">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Unit Cost</th>
+                        <th>Add to Shopping Cart</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr ng-repeat="product in products | filter:searchProduct">
+                        <td>{{ product.name }}</td>
+                        <td>{{ product.unitCost }}</td>
+                        <td><button class="addExisting" ng-click="onAddToCart(product)" ng-disabled="product.added"> 
+                            {{ product.added ? 'ADDED' : 'ADD TO CART' }}
+                        </button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <!-- Added bootstrap Modal to get the cart details as a POPUP -->
+        <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-lg"> Cart</button>
+        <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <!-- Shopping cart section -->
+                    <h1>Shopping Cart</h1>
+                    <section class="cartDetails">
+                        <!-- Check for empty cart  -->
+                        <div class="emptyCart" ng-if="shoppingCart.length === 0">Your cart is empty</div>
+                        <table class="headingForShop" ng-if="shoppingCart.length > 0">
+                            <thead>
+                                <tr >
+                                    <th class="headName">Name</th>
+                                    <th class="headCost">Unit Cost</th>
+                                    <th class="headAdd">Number of Units</th>
+                                    <th>Action</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr ng-repeat="item in shoppingCart">
+                                    <td>{{ item.product.name }}</td>
+                                    <td>{{ item.product.unitCost }}</td>
+                                    <td><input type="number" ng-model="item.units" ng-change="updateShopCart()" min="1" /></td>
+                                    <td><button class="removeProduct" ng-click="onRemove(item)">Remove</button></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div class="total">Total Amount: ₹{{ getTotalAmount() }}</div>
+                    </section>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="angular.js"></script>
+    <script src="app.js"></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+

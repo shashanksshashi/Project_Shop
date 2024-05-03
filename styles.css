@@ -1,0 +1,171 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #0a111f;
+    font-size: 16px;
+}
+.welcome{
+    background-color: #60606e;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+.container {
+    background-color: #cacae0;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    
+}
+.AddProduct{
+    background-color: #b0aeb8 ;
+    padding: 8px 8px;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.AddProducts .cart  {
+    background-color: #6d5656;
+    border-radius: 5px;
+    padding: 15px;
+    margin-bottom: 30px;
+}
+.AddProduct input[type="number"] {
+    width: 200px;
+    padding: 8px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    margin-right: 10px;
+}
+.AddProduct button {
+    padding: 8px 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: #007bff;
+    color: #fff;
+    cursor: pointer;
+}
+.AddProduct button:hover {
+    background-color: #0056b3;
+}
+.addExisting {
+    padding: 8px 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: #555e5d;
+    color: #fff;
+    cursor: pointer;
+}
+.removeProduct{
+    padding: 8px 15px;
+    border-radius: 3px;
+    border: none;
+    background-color: #f77017;
+    color: #fff;
+    cursor: pointer;
+}      
+.searchBar {
+    margin-top: 10px;
+}
+.searchBar input[type="text"] {
+    background-color: rgb(218, 221, 223);
+    width: 200px;
+    padding: 5px;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+}
+.emptyCart{
+    display: flex;
+    font-weight: bold;
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+    background-color: #e27474;
+    margin-bottom: 10px;
+    align-items: center;
+}
+.total{
+    color: #291e1e;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: larger;
+    font-weight: bold;
+}
+button:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button {
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    padding: 5px 0;
+}
+
+::-webkit-input-placeholder {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: #999; /* Placeholder text color */
+}
+
+:-moz-placeholder {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12px;
+    color: #999; /* Placeholder text color */
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+li {
+    margin-bottom: 10px;
+    padding: 10px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+}
+li span {
+    font-weight: bold;
+    color: #007bff;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+thead {
+    background-color: #f0f0f0;
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    font-weight: bold;
+    border-bottom: 2px solid #ccc;
+}
+
+tbody td {
+    padding: 12px;
+    border-bottom: 1px solid #ccc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+tfoot {
+    font-weight: bold;
+}
+
+tfoot td {
+    padding: 12px;
+    border-top: 2px solid #ccc;
+}
+
